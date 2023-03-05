@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lanzamiento de Dado</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="estilos.css">
+	<style>
+		body { background-color:white ;
+    text-align: center;
+}
+.container {
+    margin-top: 50px;
+}
+.dado {
+    width: 150px;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;		}
+.dado img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+#resultado {
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+#lanzarDado:hover{
+background-color: green;
+
+
+}
+
+#lanzarDado:active{
+    background-color: goldenrod;
+    
+}
+	</style>
+</head>
+<body class="text-center">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<h1>Lanzamiento de Dado</h1>
+				<button id="lanzarDado" class="btn btn-primary btn-lg">Lanzar Dado</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="dado" id="imagenDado"></div>
+				<p id="resultado"></p>
+			</div>
+		</div>
+	</div>
+	<script>
+		var imagenesDado = [
+		
+
+"1.png",
+"2.png",
+"3.jpg",
+"4.jpg",
+"5.jpg",
+"6.jpg"
+		];
+
+		$(document).ready(function() {
+			$("#lanzarDado").click(function() {
+				var resultado = Math.floor(Math.random() * 6) + 1;
+				/*$("#resultado").text(resultado);*/
+				$("#imagenDado").css("background-image", "url('" + imagenesDado[resultado-1] + "')");
+			});
+		});
+	</script>
+</body>
+</html>
+
+
